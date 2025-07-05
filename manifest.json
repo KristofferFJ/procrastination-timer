@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Procrastination Timer",
+  "version": "1.0",
+  "description": "Tracks how much time you procrastinate on selected websites.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/timer-icon.png"
+    }
+  },
+  "icons": {
+    "48": "icons/timer-icon.png"
+  },
+  "applications": {
+    "gecko": {
+      "id": "procrastination-timer@example.com"
+    }
+  }
+}
