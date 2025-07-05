@@ -8,9 +8,7 @@ drawTimeIcon(totalSeconds, true);
 let trackedSites = [];
 
 browser.storage.local.get("userTrackedSites").then(data => {
-    trackedSites = data.userTrackedSites || [
-        "reddit.com", "youtube.com", "twitter.com"
-    ];
+    trackedSites = data.userTrackedSites;
 });
 
 function getHost(url) {
@@ -22,7 +20,14 @@ function getHost(url) {
 }
 
 function isTracked(hostname) {
-    return trackedSites.some(site => hostname && hostname.includes(site));
+    if (!hostname) return false;
+
+    const normalized = hostname.toLowerCase().replace(/^www\./, "");
+
+    return trackedSites.some(site => {
+        const target = site.toLowerCase().replace(/^www\./, "");
+        return normalized === target;
+    });
 }
 
 function handleTabChange(tabId, url) {
