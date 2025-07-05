@@ -20,15 +20,15 @@
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "48": "icons/timer-icon.png"
+      "48": "icon.png"
     }
   },
   "icons": {
-    "48": "icons/timer-icon.png"
+    "48": "icon.png"
   },
   "applications": {
     "gecko": {
-      "id": "procrastination-timer@example.com"
+      "id": "kristofferfage@gmail.com"
     }
   }
 }
